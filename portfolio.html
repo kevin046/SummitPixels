@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SummitPixels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="header">
+        <!-- ... (copy header from index.html) ... -->
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Showcasing Our Best Work</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Web Development Project -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio/project1.jpg" alt="Corporate Website">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Corporate Website</h3>
+                                <p>Modern web development</p>
+                                <a href="#" class="btn primary-btn view-project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Project -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio/project2.jpg" alt="Online Store">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Fashion E-commerce</h3>
+                                <p>Online shopping platform</p>
+                                <a href="#" class="btn primary-btn view-project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WordPress Project -->
+                <div class="portfolio-item" data-category="wordpress">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio/project3.jpg" alt="Blog Website">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Lifestyle Blog</h3>
+                                <p>Custom WordPress theme</p>
+                                <a href="#" class="btn primary-btn view-project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="project-details">
+                <div class="project-images">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="project-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <h4>Client</h4>
+                            <p id="modalClient"></p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Technologies</h4>
+                            <p id="modalTech"></p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Website</h4>
+                            <a href="#" id="modalLink" target="_blank">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Request Form -->
+    <section class="project-request">
+        <div class="container">
+            <h2>Start Your Project</h2>
+            <p>Tell us about your project and let's create something amazing together.</p>
+            <form class="request-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="">Select Project Type</option>
+                            <option value="web">Website Development</option>
+                            <option value="ecommerce">E-commerce</option>
+                            <option value="wordpress">WordPress</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="small">$1,000 - $5,000</option>
+                            <option value="medium">$5,000 - $10,000</option>
+                            <option value="large">$10,000+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <!-- ... (copy footer from index.html) ... -->
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
