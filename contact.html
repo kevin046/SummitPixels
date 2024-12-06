@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - SummitPixels</title>
+    <meta name="description" content="Professional web development services by SummitPixels">
+    <meta name="keywords" content="web development, web design, responsive websites">
+    <title>SummitPixels - Professional Web Solutions</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -28,65 +31,60 @@
     </header>
 
     <!-- Contact Form -->
-    <section class="section">
+    <section class="section contact-section">
         <div class="container">
-            <div class="grid grid-2">
+            <h2 class="section-title">
+                <i class="fas fa-comments section-icon"></i>
+                Get in Touch
+            </h2>
+            <p class="section-subtitle">Let's discuss your project and make it happen</p>
+            
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="info-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:hello@summitpixels.com">hello@summitpixels.com</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+16478755669">(647) 875-5669</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Based in</h3>
-                        <p class="location">Toronto, Canada</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Social</h3>
-                        <div class="social-links">
-                            <a href="#" target="_blank">LinkedIn</a>
-                            <a href="#" target="_blank">GitHub</a>
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@summitpixels.com</span>
                         </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (647) 875-5669</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Toronto, ON, Canada</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" 
-                                placeholder="your@domain.com"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" 
-                                placeholder="(647) 555-5555"
-                                pattern="[\(]\d{3}[\)] \d{3}[\-]\d{4}"
-                                title="Please enter a valid phone number: (647) 555-5555">
-                        </div>
-                        <div class="form-group">
-                            <label for="project">Project Type</label>
-                            <select id="project" name="project" required>
-                                <option value="">Select project type</option>
-                                <option value="website">Website</option>
-                                <option value="ecommerce">E-commerce</option>
-                                <option value="web-app">Web Application</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                    </form>
-                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" name="phone" placeholder="(647) 555-0123" pattern="[0-9()-\s]+" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-control" name="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" name="message" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
