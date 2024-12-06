@@ -13,7 +13,9 @@ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
+    const href = link.getAttribute('href');
+    if (href === currentPage || 
+        (currentPage === 'index.html' && href === 'index.html#work')) {
         link.classList.add('active');
     }
 });
