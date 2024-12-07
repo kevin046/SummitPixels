@@ -39,24 +39,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Form Handling
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
             try {
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                // Add form submission logic here
-                console.log('Form data:', data);
-                
+                // Using EmailJS service
+                await emailjs.send(
+                    'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+                    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+                    {
+                        to_email: 'hello@summitpixels.com',
+                        from_name: data.name,
+                        from_email: data.email,
+                        phone: data.phone,
+                        subject: data.subject,
+                        message: data.message
+                    },
+                    'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+                );
+
                 // Show success message
-                alert('Thank you! We will contact you soon.');
+                showNotification('Message sent successfully!', 'success');
                 contactForm.reset();
             } catch (error) {
                 console.error('Error:', error);
-                alert('Something went wrong. Please try again.');
+                showNotification('Failed to send message. Please try again.', 'error');
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
             }
         });
     }
 });
+
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}

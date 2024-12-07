@@ -1433,3 +1433,65 @@ html {
     margin-top: 1rem;
     color: var(--light-text);
 }
+
+/* Form Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.success {
+    background-color: #00b894;
+}
+
+.notification.error {
+    background-color: #ff7675;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-loader {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Thank You Page Styles */
+.thank-you-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--light-background), white);
+}
+
+.thank-you-section h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.thank-you-section p {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.thank-you-section .btn {
+    margin-top: 1rem;
+}

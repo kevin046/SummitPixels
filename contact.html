@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -71,7 +77,16 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm"
+                    action="https://formsubmit.co/hello@summitpixels.com" 
+                    method="POST"
+                >
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact from SummitPixels Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://summitpixels.com/thank-you.html">
+                    <input type="hidden" name="_captcha" value="true">
+                    
                     <div class="form-group">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" placeholder="Your full name" required>
@@ -92,7 +107,12 @@
                         <label class="form-label">Message</label>
                         <textarea class="form-control" name="message" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    <button type="submit" class="form-submit">Send Message</button>
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>
