@@ -944,17 +944,35 @@ html {
 
 .footer-right {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .footer-right a {
     color: var(--light-text);
     font-size: 1.25rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .footer-right a:hover {
     color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Specific social media hover colors */
+.footer-right a:hover .fa-square-x-twitter {
+    color: #000000;
+}
+
+.footer-right a:hover .fa-twitter {
+    color: #1DA1F2;
+}
+
+.footer-right a:hover .fa-instagram {
+    color: #E4405F;
+}
+
+.footer-right a:hover .fa-facebook {
+    color: #1877F2;
 }
 
 /* Responsive Footer */
